@@ -1,6 +1,9 @@
 {
   "type": {
     "dynamic": "strict",
+    "_all":       { 
+      "enabled": false  
+    },
     "properties": {
       "@timestamp": {
         "format": "epoch_second",
@@ -10,11 +13,12 @@
         "type": "ip"
       },
       "request": {
-        "type": "text",
+        "type": "string",
         "fields": {
           "raw": {
             "ignore_above": 256,
-            "type": "keyword"
+            "type": "string",
+            "index": "not_analyzed"
           }
         }
       },
